@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+ >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:src="@drawable/bg_header_list_user_tracker"
+        android:scaleType="fitXY"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:padding="@dimen/_14sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/ic_back_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivSelect"/>
+
+    <ImageView
+        android:id="@+id/ivSelect"
+        android:layout_width="@dimen/_13sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:layout_marginLeft="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_24sdp"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/ic_check_b"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginVertical="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/white"
+        android:id="@+id/tv_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_marginRight="50dp"
+        android:text="@string/setting_notification"
+        android:layout_marginHorizontal="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_list_user_tracking"
+        android:paddingLeft="@dimen/_14sdp"
+        android:paddingRight="@dimen/_14sdp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:paddingHorizontal="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loZoneAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/color_0E1724"
+                    android:ellipsize="marquee"
+                    android:id="@+id/tvZoneAlert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_zone_alert_title"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    />
+
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/color_3E5370"
+                    android:ellipsize="marquee"
+                    android:id="@+id/tvToggleToEnable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/zone_notification_content"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/onOffSwitchZoneAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumb="@drawable/custom_thumb_permission"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:track="@drawable/custom_track_permission"/>
+
+            <View
+                android:id="@+id/viewOnOffSwitchZoneAlert"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/onOffSwitchZoneAlert"
+                app:layout_constraintEnd_toEndOf="@+id/onOffSwitchZoneAlert"
+                app:layout_constraintStart_toStartOf="@+id/onOffSwitchZoneAlert"
+                app:layout_constraintTop_toTopOf="@+id/onOffSwitchZoneAlert"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:background="@color/color_ECEFF1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            app:layout_constraintTop_toBottomOf="@+id/loZoneAlert"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loPushNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/color_0E1724"
+                    android:ellipsize="marquee"
+                    android:id="@+id/tvPushNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/push_notification"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    />
+
+                <TextView
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/color_3E5370"
+                    android:ellipsize="marquee"
+                    android:id="@+id/tvToggleToEnable2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/push_notification_content"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/onOffSwitchPushNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumb="@drawable/custom_thumb_permission"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:track="@drawable/custom_track_permission"/>
+
+            <View
+                android:id="@+id/viewOnOffSwitchPushNotification"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/onOffSwitchPushNotification"
+                app:layout_constraintEnd_toEndOf="@+id/onOffSwitchPushNotification"
+                app:layout_constraintStart_toStartOf="@+id/onOffSwitchPushNotification"
+                app:layout_constraintTop_toTopOf="@+id/onOffSwitchPushNotification"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:background="@color/color_ECEFF1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            app:layout_constraintTop_toBottomOf="@+id/loPushNotification"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

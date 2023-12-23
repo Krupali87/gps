@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+ >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/bg_bottom_sheet_profile"
+        android:paddingLeft="35dp"
+        android:paddingTop="10dp"
+        android:paddingRight="35dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="35dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete_all_notification"/>
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#0e1724"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/tv_DescTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/dialog_confirm_delete_des"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginVertical="20dp">
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="#3e5370"
+                android:gravity="center"
+                android:id="@+id/txtCancel"
+                android:background="@drawable/bg_btn_cancel_delete_dialog"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:paddingVertical="12dp"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:id="@+id/txtDelete"
+                android:background="@drawable/bg_btn_delete_delete_dialog"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/delete"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:paddingVertical="12dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

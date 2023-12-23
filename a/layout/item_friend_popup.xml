@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+ >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivFriends"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/ivAllowTracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_allow_tracking"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cvFriends"
+        app:layout_constraintEnd_toEndOf="@+id/cvFriends"/>
+
+    <ImageView
+        android:id="@+id/ivNotAllowTracking"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_not_allow_tracking"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/cvFriends"
+        app:layout_constraintEnd_toEndOf="@+id/cvFriends"/>
+
+    <TextView
+        android:textColor="@color/color_0E1724"
+        android:id="@+id/tvFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvFriends"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

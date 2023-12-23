@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+ >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/color_01073F"
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:text="@string/set_your_personal_information"
+        android:textAlignment="textStart"
+        android:layout_marginStart="@dimen/_14sdp"
+        app:layout_constraintEnd_toStartOf="@+id/ivSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/white"
+        android:id="@+id/tvTitleSetting"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_27sdp"
+        android:text="@string/set_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:padding="@dimen/_14sdp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/ic_back_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivSelect"/>
+
+    <ImageView
+        android:enabled="true"
+        android:id="@+id/ivSelect"
+        android:layout_width="@dimen/_13sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:layout_marginRight="@dimen/_14sdp"
+        android:foreground="?attr/selectableItemBackground"
+        android:src="@drawable/ic_check_w"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:enabled="true"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/email"
+        android:background="@drawable/bg_input_dialog"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginLeft="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_14sdp"
+        android:hint="@string/enter_your_email"
+        android:inputType="textEmailAddress"
+        android:imeOptions="actionDone"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivSelect"/>
+
+    <EditText
+        android:textColor="@color/colorAccent"
+        android:id="@+id/privateCode"
+        android:background="@drawable/bg_input_dialog"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginLeft="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_14sdp"
+        android:hint="@string/enter_your_private_code"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_14sdp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="@dimen/_14sdp"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        app:cardBackgroundColor="#0d1891e1"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/privateCode">
+
+        <TextView
+            android:textSize="13sp"
+            android:textColor="#0079ca"
+            android:padding="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_information_description" />
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/outside"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"/>
+
+    <FrameLayout
+        android:id="@+id/frLoading"
+        android:background="#52494949"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

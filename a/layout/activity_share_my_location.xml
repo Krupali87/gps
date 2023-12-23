@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+ >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:src="@drawable/bg_header_list_user_tracker"
+        android:scaleType="fitXY"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_simple_back"
+        android:contentDescription="@null"
+        android:layout_marginStart="19dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_header"/>
+
+    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:id="@+id/tv_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/share_my_location_header"
+        android:maxLines="1"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_qr_code"
+        app:layout_constraintStart_toEndOf="@+id/img_back"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/img_qr_code"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_qr_code"
+        android:layout_marginEnd="19dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_header"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_list_user_tracking"
+        android:paddingLeft="@dimen/_14sdp"
+        android:paddingTop="@dimen/_22sdp"
+        android:paddingRight="@dimen/_14sdp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:paddingHorizontal="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header">
+
+        <TextView
+            android:textSize="@dimen/_13ssp"
+            android:textColor="#0e1724"
+            android:ellipsize="end"
+            android:id="@+id/tvTrack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/share_my_location_Allow_Track"
+            android:maxLines="1"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/switchTrack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchTrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:thumb="@drawable/custom_thumb"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTrackDes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTrack"
+            app:switchMinWidth="48dp"
+            app:switchPadding="4dp"
+            app:track="@drawable/custom_track"/>
+
+        <TextView
+            android:textSize="@dimen/_11ssp"
+            android:textColor="#3e5370"
+            android:ellipsize="end"
+            android:id="@+id/tvTrackDes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="@string/share_my_location_Allow_Track_des"
+            android:maxLines="1"
+            android:layout_marginEnd="@dimen/_9sdp"
+            app:layout_constraintEnd_toStartOf="@+id/switchTrack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTrack"/>
+
+        <View
+            android:id="@+id/line1"
+            android:background="#eceff1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_18sdp"
+            app:layout_constraintEnd_toEndOf="@+id/switchTrack"
+            app:layout_constraintStart_toStartOf="@+id/tvTrack"
+            app:layout_constraintTop_toBottomOf="@+id/switchTrack"/>
+
+        <TextView
+            android:textSize="@dimen/_13ssp"
+            android:textColor="#0e1724"
+            android:id="@+id/tv_security_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:text="@string/security_code_up_case"
+            app:layout_constraintStart_toStartOf="@+id/line1"
+            app:layout_constraintTop_toBottomOf="@+id/line1"/>
+
+        <TextView
+            android:textSize="@dimen/_11ssp"
+            android:textColor="#3e5370"
+            android:id="@+id/tv_security_code_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/security_code_des"
+            app:layout_constraintStart_toStartOf="@+id/line1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_security_code"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctCode"
+            android:background="@drawable/bg_share_code"
+            android:paddingLeft="16dp"
+            android:paddingTop="12dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_security_code_des">
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:id="@+id/tvCodeShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                app:drawableEndCompat="@drawable/ic_copy"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctBattery"
+            android:background="@drawable/bg_allow_track_this_device"
+            android:padding="@dimen/_11sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/ctCode">
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:id="@+id/tvBattery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/share_my_location_battery_Allow_Track"
+                android:drawablePadding="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/imgRightArrow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_right_arrow"
+                android:layout_weight="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="#3e5370"
+                android:id="@+id/tvBatteryDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/share_my_location_battery_Turn_off"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBattery"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="#ff543d"
+                android:id="@+id/tv_turn_off_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:text="@string/turn_off_mode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBatteryDes"/>
+
+            <View
+                android:id="@+id/line_turn_off_mode"
+                android:background="#ff543d"
+                android:layout_width="0dp"
+                android:layout_height="0.7dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_turn_off_mode"
+                app:layout_constraintStart_toStartOf="@+id/tv_turn_off_mode"
+                app:layout_constraintTop_toBottomOf="@+id/tv_turn_off_mode"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/frLoading"
+        android:background="#52494949"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="32dp"
+            android:layout_height="32dp"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
